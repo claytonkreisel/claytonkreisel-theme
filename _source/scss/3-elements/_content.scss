@@ -1,0 +1,24 @@
+.content, .content-shadow{
+  width: calc(100% - #{$menu-thickness});
+  z-index: 2;
+
+  @include lg{
+    position: absolute;
+    left: $menu-thickness;
+    margin-left: $space--xxs;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+.content-shadow{
+  background: rgba(255,255,255,0.2);
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+
+  @include lg{
+    left: calc(#{$menu-thickness} - 15px);
+    top: -13px;
+  }
+}

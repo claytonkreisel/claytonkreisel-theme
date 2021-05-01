@@ -1,0 +1,15 @@
+/*
+Theme Name: Clayton Kreisel Portfolio Theme
+Author: Clayton Kreisel
+Author URI: https://claytonkreisel.com
+Description: The portfolio theme for Clayton Kreisel
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: claytonkreisel
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import "assets/css/main.min.css";

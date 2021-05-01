@@ -1,0 +1,55 @@
+$green: #2ba077;
+
+/*******************************************************************
+BRAND GRADIENTS
+*******************************************************************
+*/
+
+/*
+*******************************************************************
+COMMON GRAYS
+*******************************************************************
+*/
+$gray-100        : rgb(245,245,245)!default;
+$gray-200        : rgb(238,238,238)!default;
+$gray-300        : rgb(225,225,225)!default;
+$gray-350        : rgb(210,210,210)!default;
+$gray-400        : rgb(189,189,189)!default;
+$gray-500        : rgb(158,158,158)!default;
+$gray-600        : rgb(117,117,117)!default;
+$gray-700        : rgb(97,97,97)!default;
+$gray-750        : rgb(72,72,72)!default;
+$gray-800        : rgb(66,66,66)!default;
+$gray-850        : rgb(42,42,42)!default;
+$gray-900        : rgb(32,32,32)!default;
+$black           : rgb(0, 0, 0)!default;
+$white           : rgb(255, 255, 255)!default;
+$offwhite        : #f7f7f7!default;
+
+
+/*
+*******************************************************************
+Elements and Brand
+*******************************************************************
+*/
+$nav-color : $gray-850!default;
+$select-color: $nav-color;
+
+$primary-color   : rgb(44, 140, 186);
+$secondary-color : rgb(184, 101, 73);
+$primary-color-hover  : lighten($primary-color, 25%);
+$secondary-color-hover: darken($white, 20%);
+$font-color      : #424b62;
+
+$link            : $primary-color;
+$button          : $primary-color;
+
+
+/*
+*******************************************************************
+MESSAGE COLORS
+*******************************************************************
+*/
+$error    : rgb(153,17,17)!default;
+$valid    : rgb(8,158,0)!default;
+$warning  : rgb(255,246,100)!default;

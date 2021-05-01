@@ -1,0 +1,246 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+$screen-sizes: (
+    xxxs: 'xxxs',
+    xxs: 'xxs',
+    xs: 'xs',
+    small: 'sm',
+    medium: 'md',
+    large: 'lg',
+    xl: 'xl',
+    xxl: 'xxl'
+);
+
+/*Media Queries*/
+@mixin responsive-screen($s){
+    @if($s=='xxxs'){
+        @media screen and (min-width: #{$xxxs-width}) {
+          @content;
+        }
+    }
+    @if($s=='xxs'){
+        @media screen and (min-width: #{$xxs-width}) {
+          @content;
+        }
+    }
+    @if($s=='xs'){
+        @media screen and (min-width: #{$xs-width}) {
+          @content;
+        }
+    }
+    @if($s=='small'){
+        @media screen and (min-width: #{$small-width}) {
+          @content;
+        }
+    }
+    @if($s=='medium'){
+        @media screen and (min-width: #{$medium-width}) {
+          @content;
+        }
+    }
+    @if($s=='large'){
+        @media screen and (min-width: #{$large-width}) {
+          @content;
+        }
+    }
+    @if($s=='xl'){
+        @media screen and (min-width: #{$xl-width}) {
+          @content;
+        }
+    }
+    @if($s=='xxl'){
+        @media screen and (min-width: #{$xxl-width}) {
+          @content;
+        }
+    }
+}
+@mixin xxxs {
+  @media screen and (min-width: #{$xxxs-width}) {
+    @content;
+  }
+}
+@mixin xxs {
+  @media screen and (min-width: #{$xxs-width}) {
+    @content;
+  }
+}
+@mixin xs {
+  @media screen and (min-width: #{$xs-width}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media screen and (min-width: #{$small-width}) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$xl-width}) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media (min-width: #{$xxl-width}) {
+    @content;
+  }
+}
+
+@mixin xxxs-max {
+  @media screen and (max-width: #{$xxxs-width}) {
+    @content;
+  }
+}
+@mixin xxs-max {
+  @media screen and (max-width: #{$xxs-width}) {
+    @content;
+  }
+}
+@mixin xs-max {
+  @media screen and (max-width: #{$xs-width}) {
+    @content;
+  }
+}
+@mixin small-max {
+  @media screen and (max-width: #{$small-width}) {
+    @content;
+  }
+}
+@mixin medium-max {
+  @media screen and (max-width: #{$medium-width}) {
+    @content;
+  }
+}
+@mixin large-max {
+  @media (max-width: #{$large-width}) {
+    @content;
+  }
+}
+@mixin xl-max {
+  @media (max-width: #{$xl-width}) {
+    @content;
+  }
+}
+@mixin xxl-max {
+  @media (max-width: #{$xxl-width}) {
+    @content;
+  }
+}
+
+@mixin xxxs-only {
+  @media screen and (min-width: #{$xxxs-width}) and (max-width: #{$xxs-width - .01em}) {
+    @content;
+  }
+}
+@mixin xxs-only {
+  @media screen and (min-width: #{$xxs-width}) and (max-width: #{$xs-width - .01em}) {
+    @content;
+  }
+}
+@mixin xs-only {
+  @media screen and (min-width: #{$xs-width}) and (max-width: #{$small-width - .01em}) {
+    @content;
+  }
+}
+@mixin small-only {
+  @media screen and (min-width: #{$small-width}) and (max-width: #{$medium-width - .01em}) {
+    @content;
+  }
+}
+@mixin medium-only {
+  @media screen and (min-width: #{$medium-width}) and (max-width: #{$large-width - .01em}) {
+    @content;
+  }
+}
+@mixin large-only {
+  @media screen and (min-width: #{$large-width}) and (max-width: #{$xl-width - .01em}) {
+    @content;
+  }
+}
+@mixin xl-only {
+  @media screen and (min-width: #{$xl-width}) and (max-width: #{$xxl-width - .01em}) {
+    @content;
+  }
+}
+@mixin xxl-only {
+  @media (min-width: #{$xxl-width}) {
+    @content;
+  }
+}
+
+//Linear Gradient Mixins
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+//Headings
+@mixin headings-definition{
+    font-family: $sans;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    line-height: .75em;
+
+    &.text-style--serif{
+        font-family: $serif;
+    }
+
+    &.text-style--cursive{
+        font-family: $cursive;
+        font-weight: 400;
+        line-height: 1em;
+    }
+
+    &.text-style--cursve-solid{
+        font-family: $cursive-solid;
+        font-weight: 400;
+        line-height: 1em;
+    }
+}
+
+@mixin headings-content-definition{
+    h1{
+        font-size: $font-size--xxl;
+    }
+    h2{
+        font-size: $font-size--xl;
+    }
+    h3{
+        font-size: $font-size--l;
+    }
+    h4{
+        font-size: $font-size--m;
+    }
+    h5{
+        font-size: $font-size--s;
+    }
+    h6{
+        font-size: $font-size--xs;
+    }
+}
+
+@mixin absolute-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

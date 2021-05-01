@@ -1,0 +1,128 @@
+$vcard-num: 450;
+$vcard-thickness: $vcard-num + px;
+
+.v-card{
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  @include lg{
+    width: $vcard-thickness;
+    position: absolute;
+    height: 100%;
+    background: #fff;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .v-card--slanter-holder{
+
+    @include lg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff;
+      transform-origin: bottom left;
+      -ms-transform: skew(-7deg, 0deg);
+      -webkit-transform: skew(-7deg, 0deg);
+      transform: skew(-7deg, 0deg);
+      display: block;
+      height: 100%;
+      width: calc(100% + 104px);
+      box-shadow: 10px 0px 30px rgba(0,0,0,0.15);
+      z-index: 1;
+      overflow: hidden;
+      margin-left: -104px;
+    }
+
+    .v-card--slant{
+        @include lg{
+          position: absolute;
+          top: 0px;
+          left: -52px;
+          right: -52px;
+          bottom: -0px;
+          -webkit-transform: skew(7deg);
+          -moz-transform: skew(7deg);
+          -o-transform: skew(7deg);
+          background: url('../images/me.jpg');
+          repeat: no-repeat;
+          background-position: top center;
+          background-size: cover;
+          z-index: 2;
+        }
+
+    }
+
+    .v-card--slant-bottom{
+      position:absolute;
+      z-index: 1;
+      background: rgba(255,255,255,0.8);
+      bottom: 0;
+      height: 150px;
+      width: 100%;
+
+      .v-card--slant-line{
+        position: absolute;
+        bottom: 0px;
+        background: $gray-100;
+        height: 40px;
+        width: 100%;
+        border-top: 1px solid $gray-400;
+      }
+    }
+
+    .v-card--content{
+      height: 150px;
+      position: absolute;
+      right: 104px;
+      width: $vcard-thickness;
+      z-index: 3;
+      bottom: 0;
+    }
+
+    .v-card--buttons{
+      bottom: 0;
+      height: 40px;
+      position: absolute;
+      width: 100%;
+
+      &:after{
+        clear: both;
+        content: '';
+        display: block;
+        height: 0px;
+        width: 0px;
+      }
+
+
+      a{
+        display: block;
+        text-align: center;
+        width: 50%;
+        float: left;
+        height: 100%;
+        position: relative;
+
+        &:first-child{
+          border-right: 1px solid $gray-400;
+        }
+
+        .v-card--button-text{
+          @include absolute-center;
+          font-size: .8em;
+          text-transform: uppercase;
+          color: $gray-500;
+          transition: color 200ms linear;
+        }
+
+        &:hover{
+          .v-card--button-text{
+            color: $gray-900;
+          }
+        }
+      }
+    }
+  }
+
+}

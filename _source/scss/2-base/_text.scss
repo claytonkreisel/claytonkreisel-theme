@@ -1,0 +1,258 @@
+body{
+  font-family: $sans;
+}
+.text-style--sans{
+    font-family: $sans;
+}
+.text-style--block{
+    font-family: $block;
+}
+.text-style--cursive{
+    font-family: $cursive;
+}
+.text-style--cursive-solid{
+    font-family: $cursive-solid;
+}
+$sizes-text: (
+    xxxxs: $font-size--xxxxs,
+    xxxs: $font-size--xxxs,
+    xxs: $font-size--xxs,
+    xs: $font-size--xs,
+    s: $font-size--s,
+    sm: ($font-size--s + $font-size--m) / 2,
+    m: $font-size--m,
+    ml: ($font-size--m + $font-size--l) / 2,
+    l: $font-size--l,
+    xl: $font-size--xl,
+    xxl: $font-size--xxl,
+    xxxl: $font-size--xxxl,
+    xxxxl: $font-size--xxxxl,
+);
+
+@each $size, $units in $sizes-text{
+    .text-size--#{$size}{
+        font-size: $units;
+    }
+    .text-line-height--#{$size}{
+        line-height: $units;
+    }
+}
+
+@for $i from 1 through 100{
+    .text-size--#{$i}{
+        font-size: #{$i/10}em;
+    }
+    .text-line-height--#{$i}{
+        line-height: #{$i/10}em;
+    }
+}
+
+@each $name, $abbr in $screen-sizes{
+    @include responsive-screen($name){
+        @each $size, $units in $sizes-text{
+            .text-size__#{$abbr}--#{$size}{
+                font-size: $units;
+            }
+        }
+    }
+}
+
+@for $i from -10 through 10{
+    .text-letter-spacing--#{$i}{
+        letter-spacing: #{$i}px;
+    }
+}
+
+.text-align--center{
+    text-align: center;
+}
+.text-align--justify{
+    text-align: justify;
+}
+.text-align--left{
+    text-align: left;
+}
+.text-align--right{
+    text-align: right;
+}
+@each $name, $abbr in $screen-sizes{
+    @include responsive-screen($name){
+        .text-align__#{$abbr}--center{
+            text-align: center;
+        }
+        .text-align__#{$abbr}--left{
+            text-align: left;
+        }
+        .text-align__#{$abbr}--right{
+            text-align: right;
+        }
+    }
+}
+
+@for $i from 1 through 40{
+  .font-size--#{$i}{
+    font-size: #{$i / 10}em;
+  }
+  .font-size--#{$i}-important{
+    font-size: #{$i / 10}em!important;
+  }
+  @each $name, $abbr in $screen-sizes{
+      @include responsive-screen($name){
+        .font-size__#{$abbr}--#{$i}{
+          font-size: #{$i / 10}em;
+        }
+        .font-size__#{$abbr}--#{$i}-important{
+          font-size: #{$i / 10}em!important;
+        }
+      }
+  }
+}
+
+.vertical-align--top{
+    vertical-align: top;
+}
+.vertical-align--middle{
+    vertical-align: middle;
+}
+.vertical-align--bottom{
+    vertical-align: bottom;
+}
+
+.text-weight--100{
+    font-weight: 100;
+}
+.text-weight--200{
+    font-weight: 200;
+}
+.text-weight--300{
+    font-weight: 300;
+}
+.text-weight--400{
+    font-weight: 400;
+}
+.text-weight--500{
+    font-weight: 500;
+}
+.text-weight--600{
+    font-weight: 600;
+}
+.text-weight--700{
+    font-weight: 700;
+}
+.text-weight--800{
+    font-weight: 800;
+}
+.text-weight--900{
+    font-weight: 900;
+}
+.text-transform--uppercase{
+    text-transform: uppercase;
+}
+.text-transform--lowercase{
+    text-transform: lowercase;
+}
+.text-transform--capitalize{
+    text-transform: capitalize;
+}
+.text-transform--full-width{
+    text-transform: full-width;
+}
+.text-decoration--underline{
+    text-decoration: underline;
+}
+.text-decoration--overline{
+    text-decoration: overline;
+}
+.text-decoration--line-through{
+    text-decoration: line-through;
+}
+.text-decoration--none{
+    text-decoration: none;
+}
+.text-color--default{
+    color: $font-color;
+}
+.text-color--white{
+    color: $white;
+}
+.text-color--offwhite{
+    color: $offwhite;
+}
+.text-color--primary-color{
+    color: $primary-color;
+}
+.text-color--secondary-color{
+    color: $secondary-color;
+}
+.text-color--black{
+    color: $black;
+}
+.text-color--gray-100{
+    color: $gray-100;
+}
+.text-color--gray-200{
+    color: $gray-200;
+}
+.text-color--gray-300{
+    color: $gray-300;
+}
+.text-color--gray-400{
+    color: $gray-400;
+}
+.text-color--gray-500{
+    color: $gray-500;
+}
+.text-color--gray-600{
+    color: $gray-600;
+}
+.text-color--gray-700{
+    color: $gray-700;
+}
+.text-color--gray-800{
+    color: $gray-800;
+}
+.text-color--gray-900{
+    color: $gray-900;
+}
+.hover-color--default:hover{
+    color: $font-color;
+}
+.hover-color--black:hover{
+    color: $black;
+}
+.hover-color--gray-100:hover{
+    color: $gray-100;
+}
+.hover-color--gray-200:hover{
+    color: $gray-200;
+}
+.hover-color--gray-300:hover{
+    color: $gray-300;
+}
+.hover-color--gray-400:hover{
+    color: $gray-400;
+}
+.hover-color--gray-500:hover{
+    color: $gray-500;
+}
+.hover-color--gray-600:hover{
+    color: $gray-600;
+}
+.hover-color--gray-700:hover{
+    color: $gray-700;
+}
+.hover-color--gray-800:hover{
+    color: $gray-800;
+}
+.hover-color--gray-900:hover{
+    color: $gray-900;
+}
+.hover-color--primary-color:hover{
+    color: $primary-color;
+}
+.hover-color--secondary-color:hover{
+    color: $secondary-color;
+}
+strong{
+    font-weight: 700;
+}

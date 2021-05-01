@@ -1,0 +1,52 @@
+/****** COLORS ******/
+
+/*Color variables declared in /scss/1_base/_colors.scss*/
+
+/****** FONTS ******/
+
+$sans: 'Nunito Sans', sans-serif;
+$block: 'Source Code Pro', monospace;
+$serif: 'Desire';
+$cursive: 'Authenia';
+$cursive-solid: 'Authenia Solid';
+$iconfont: 'Fayette Icons';
+
+$font-size--xxxxs: .5em;
+$font-size--xxxs: .6em;
+$font-size--xxs: .75em;
+$font-size--xs: .85em;
+$font-size--s: .9em;
+$font-size--m: 1em;
+$font-size: 1em;
+$font-size--l: 1.25em;
+$font-size--xl: 1.5em;
+$font-size--xxl: 2em;
+$font-size--xxxl: 3em;
+$font-size--xxxxl: 4em;
+
+/****** LAYOUT ******/
+$max-width: 72em;
+
+/****** SPACING ******/
+
+$space--xxxs : 0.25em;
+$space--xxs  : 0.5em;
+$space--xs   : 0.75em;
+$space--s   : 0.875em;
+$space      : 1em;
+$space--m   : 1em;
+$space--l   : 1.25em;
+$space--xl  : 1.5em;
+$space--xxl : 2em;
+$space--xxxl : 3em;
+
+
+/****** BREAKPOINTS ******/
+$xxxs-width: 20em; //Phone
+$xxs-width: 21.5em; //Phone
+$xs-width: 35em; //Between Phone and Tablet
+$small-width: 48em; //Tablet
+$medium-width: 55em; //Landscape Tablet
+$large-width: 65.625em; //Class Monitor and Laptop
+$xl-width: 90em; //1080 HD
+$xxl-width: 120.063em; //4K

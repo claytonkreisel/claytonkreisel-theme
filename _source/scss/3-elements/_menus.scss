@@ -1,0 +1,170 @@
+$menu-num: 80;
+$menu-thickness: $menu-num + px; //The thickness of the buttons and height of menu on mobile
+
+section.menu{
+  width: 100%;
+  height: $menu-thickness;
+  position: relative;
+  z-index: 90;
+
+  @include lg{
+    position: absolute;
+    width: $menu-thickness;
+    height: auto;
+    top: 30px;
+    left: 0px;
+    overflow: hidden;
+    @include box-shadow('lg');
+    border: none;
+  }
+
+  nav{
+    position: relative;
+
+    ul{
+      position: relative;
+      list-style: none;
+      margin:0;
+      padding:0;
+
+      li{
+        border-bottom: solid 1px $gray-200;
+        overflow: hidden;
+
+        @include lg{
+          height: $menu-thickness;
+          width: $menu-thickness;
+          display: block;
+        }
+
+        &.top-cap{
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+
+        &.bottom-cap{
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+
+        a{
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: relative;
+          cursor: pointer;
+          color: $gray-900;
+          transition: color 150ms linear;
+          background: $offwhite;
+
+          &:hover{
+            color: $primary-color-hover;
+          }
+
+          &.active{
+            color: $primary-color;
+          }
+
+          &.menu-icon--holder{
+
+            .menu-icon{
+              height: 2px;
+              width: 32px;
+              background: $gray-900;
+              position: relative;
+
+              &:after, &:before{
+                height: 2px;
+                width: 25%;
+                background: $gray-900;
+                display: block;
+                margin-bottom: $space--xxxs;
+                content: "";
+                text-indent: -99999px;
+                position: absolute;
+                top: $space--xxxs;
+                transition: width 150ms linear, background-color 150ms linear;
+              }
+
+              &:before{
+                width: 45%;
+                top: -$space--xxxs;
+              }
+            }
+
+            &:hover{
+              .menu-icon{
+                background: $primary-color-hover;
+
+                &:after, &:before{
+                  width: 100%;
+                  background: $primary-color-hover;
+                }
+
+              }
+            }
+          }
+
+          .menu-item--content{
+            @include absolute-center;
+            text-align: center;
+
+            .menu-item--icon{
+              font-size: 1.5em;
+              padding-bottom: .35em;
+            }
+
+            .menu-item--text{
+              font-size: .7em;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+div.mobile-menu{
+  z-index:-2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: none;
+  background: rgba(255,255,255,0.8);
+  opacity: 0;
+  transition: z-index 1ms linear 400ms, opacity 200ms linear;
+
+  &.active{
+    z-index:999;
+    opacity: 1;
+    transition: z-index 1ms linear, opacity 200ms linear;
+
+    .mobile-menu--container{
+      bottom: 0%;
+    }
+  }
+
+  .mobile-menu--container{
+    width: 95%;
+    max-width: 1440px;
+    bottom: -100%;
+    height: auto;
+    background: #fff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: bottom 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.15);
+
+  }
+
+  @include lg{
+    display: block;
+  }
+}
